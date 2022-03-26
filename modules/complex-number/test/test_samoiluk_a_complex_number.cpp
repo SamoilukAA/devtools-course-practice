@@ -87,7 +87,7 @@ TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Subtract_Complex_Numbers) {
     EXPECT_EQ(0.5, sub.getIm());
 }
 
-TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Compare_Complex_Numbers) {
+TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Compare_Complex_Numbers_1) {
     double re1 = 2.0;
     double im1 = 0.1;
 
@@ -99,4 +99,18 @@ TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Compare_Complex_Numbers) {
     ComplexNumber z2(re2, im2);
 
     EXPECT_TRUE(z1 != z2);
+}
+
+TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Compare_Complex_Numbers_2) {
+    double re1 = 2.0;
+    double im1 = 0.1;
+
+    ComplexNumber z1(re1, im1);
+
+    double re2 = 2.0;
+    double im2 = 0.1;
+
+    ComplexNumber z2(re2, im2);
+
+    EXPECT_TRUE(z1 == z2);
 }
