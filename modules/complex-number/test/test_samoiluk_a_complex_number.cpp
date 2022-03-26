@@ -70,6 +70,23 @@ TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Add_Complex_Numbers) {
     EXPECT_EQ(0.9, sum.getIm());
 }
 
+TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Subtract_Complex_Numbers) {
+    double re1 = 5.0;
+    double im1 = 0.8;
+
+    ComplexNumber z1(re1, im1);
+
+    double re2 = 2.0;
+    double im2 = 0.3;
+
+    ComplexNumber z2(re2, im2);
+
+    ComplexNumber sub = z1 - z2;
+
+    EXPECT_EQ(3, sub.getRe());
+    EXPECT_EQ(0.5, sub.getIm());
+}
+
 TEST(Samoiluk_Anastasiya_ComplexNumberTest, Can_Compare_Complex_Numbers) {
     double re1 = 2.0;
     double im1 = 0.1;
