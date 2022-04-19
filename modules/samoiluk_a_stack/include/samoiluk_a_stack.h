@@ -28,7 +28,7 @@ class Stack {
 };
 
 template <class T>
-Stack<T>::Stack(int _size = 100) : size(_size) {
+Stack<T>::Stack(int _size) : size(_size) {
     if (size < 0) throw "Negative stack size";
     i = -1;
     mem = new T[size];
