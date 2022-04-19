@@ -10,8 +10,8 @@ class Stack {
     T* mem;
     int size;
     int i;
-public:
-    Stack(int _size = 100);
+ public:
+    explicit Stack(int _size = 100);
     Stack(const Stack& s);
     ~Stack();
 
