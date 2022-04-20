@@ -26,12 +26,20 @@ TEST(Stack, can_copy_stack_correctly) {
     EXPECT_EQ(s.getLast(), s1.getLast());
 }
 
-TEST(Stack, can_push_and_pop_element) {
+TEST(Stack, can_push_element) {
+    Stack<int> s(4);
+    s.push(1);
+
+    EXPECT_EQ(1, s.getLast());
+}
+
+TEST(Stack, can_pop_element) {
     Stack<int> s(4);
     s.push(1);
     s.push(2);
 
     EXPECT_EQ(2, s.pop());
+    EXPECT_EQ(1, s.getLast());
 }
 
 TEST(Stack, can_get_last) {
