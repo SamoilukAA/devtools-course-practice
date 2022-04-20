@@ -9,7 +9,7 @@ template <class T>
 class Stack {
     T* mem;
     int size;
-    int i;
+    int index;
  public:
     explicit Stack(int _size = 100);
     Stack(const Stack& s);
@@ -30,16 +30,16 @@ class Stack {
 template <class T>
 Stack<T>::Stack(int _size) : size(_size) {
     if (size < 0) throw "Negative stack size";
-    i = -1;
+    index = -1;
     mem = new T[size];
 }
 
 template <class T>
 Stack<T>::Stack(const Stack& s) {
     size = s.size;
-    i = s.i;
+    index = s.index;
     mem = new T[size];
-    for (int j = 0; j < i; j++)
+    for (int j = 0; j < index; j++)
         mem[j] = s.mem[j];
 }
 
@@ -52,38 +52,38 @@ Stack<T>::~Stack() {
 template <class T>
 void Stack<T>::push(T value) {
     if (isFull()) throw "isFull";
-    i++;
-    mem[i] = value;
+    index++;
+    mem[index] = value;
 }
 
 template <class T>
 T Stack<T>::pop() {
     if (isEmpty()) throw "isEmpty";
-    T value = mem[i];
-    i--;
+    T value = mem[index];
+    index--;
     return value;
 }
 
 template <class T>
-T Stack<T>::getLast() { return mem[i]; }
+T Stack<T>::getLast() { return mem[index]; }
 
 template <class T>
 T Stack<T>::getSize() { return size; }
 
 template <class T>
-bool Stack<T>::isEmpty() { return i < 0; }
+bool Stack<T>::isEmpty() { return index < 0; }
 
 template <class T>
-bool Stack<T>::isFull() { return i >= size - 1; }
+bool Stack<T>::isFull() { return index >= size - 1; }
 
 template <class T>
 Stack<T>& Stack<T>::operator=(const Stack<T>& s) {
     if (&s == this) return *this;
     size = s.size;
-    i = s.i;
+    index = s.index;
     delete mem;
     mem = new T[size];
-    for (int j = 0; j < i; j++)
+    for (int j = 0; j < index; j++)
         mem[j] = s.mem[j];
     return *this;
 }

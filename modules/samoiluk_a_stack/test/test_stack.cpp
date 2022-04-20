@@ -7,6 +7,10 @@ TEST(Stack, can_create_stack_with_positive_length) {
     ASSERT_NO_THROW(Stack<int> s(5));
 }
 
+TEST(Stack, cant_create_stack_with_negative_length) {
+    ASSERT_ANY_THROW(Stack<int> s(-5));
+}
+
 TEST(Stack, can_create_copied_stack) {
     Stack<int> s(10);
 
