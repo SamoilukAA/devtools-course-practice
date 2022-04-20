@@ -17,6 +17,15 @@ TEST(Stack, can_create_copied_stack) {
     ASSERT_NO_THROW(Stack<int> s1(s));
 }
 
+TEST(Stack, can_copy_stack_correctly) {
+    Stack<double> s(8);
+    s.push(4.5);
+    s.push(2.7);
+    Stack<double> s1(s);
+
+    EXPECT_EQ(s.getLast(), s1.getLast());
+}
+
 TEST(Stack, can_push_and_pop_element) {
     Stack<int> s(4);
     s.push(1);
@@ -68,6 +77,16 @@ TEST(Stack, can_assign_stacks_of_equal_size) {
     ASSERT_NO_THROW(s = s1);
 }
 
+TEST(Stack, can_assign_stacks_of_equal_size_correctly) {
+    Stack<double> s(2);
+    Stack<double> s1(2);
+    s.push(1.5);
+    s.push(5.5);
+    s1 = s;
+
+    EXPECT_EQ(s.getLast(), s1.getLast());
+}
+
 TEST(Stack, can_assign_stacks_of_different_size) {
     Stack<int> s(2);
     Stack<int> s1(3);
@@ -75,4 +94,14 @@ TEST(Stack, can_assign_stacks_of_different_size) {
     s1.push(2);
 
     ASSERT_NO_THROW(s = s1);
+}
+
+TEST(Stack, can_assign_stacks_of_different_size_correctly) {
+    Stack<double> s(2);
+    Stack<double> s1(4);
+    s.push(0.3);
+    s.push(0.8);
+    s1 = s;
+
+    EXPECT_EQ(s.getLast(), s1.getLast());
 }

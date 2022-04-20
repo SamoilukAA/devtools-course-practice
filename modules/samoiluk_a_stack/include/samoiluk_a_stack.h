@@ -39,7 +39,7 @@ Stack<T>::Stack(const Stack& s) {
     size = s.size;
     index = s.index;
     mem = new T[size];
-    for (int j = 0; j < index; j++)
+    for (int j = 0; j < index + 1; j++)
         mem[j] = s.mem[j];
 }
 
@@ -83,7 +83,7 @@ Stack<T>& Stack<T>::operator=(const Stack<T>& s) {
     index = s.index;
     delete mem;
     mem = new T[size];
-    for (int j = 0; j < index; j++)
+    for (int j = 0; j < index + 1; j++)
         mem[j] = s.mem[j];
     return *this;
 }
