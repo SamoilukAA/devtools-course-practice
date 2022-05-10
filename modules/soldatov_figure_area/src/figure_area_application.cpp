@@ -1,5 +1,6 @@
 // Copyright 2022 Samoiluk Anastasiya
 
+#include <string>
 #include "include/figure_area_application.h"
 
 figureArea_App::figureArea_App() : message_("") {}
