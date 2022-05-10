@@ -57,9 +57,8 @@ std::string figureArea_App::operator()(int argc, const char** argv) {
         if (argc == 2) {
             radius = parseDouble(argv[1]);
         } else {
-            const char* tmp;
             for (int i = 1; i < argc; i++) {
-                tmp = argv[i];
+                const char* tmp = argv[i];
                 rect[i - 1] = parseDouble(tmp);
             }
         }
